@@ -23,7 +23,7 @@
 }
 
 /* ! ======== Secciones ======== */
-/* ? ---- Titulo ---- */
+/* ? ----------------------- Titulo ----------------------- */
 
 .title-section h1 {
     font-size: 64px;
@@ -40,12 +40,12 @@
     margin-bottom: 32px;
 }
 
-/* ? ---- Invitacion ---- */
+/* ? ----------------------- Invitacion ----------------------- */
 .invitation-section {
     font-family: var(--fuente-secundaria), serif;
 }
 
-/* ? ---- Detalles del Evento ---- */
+/* ? ----------------------- Detalles del Evento ----------------------- */
 .event-section {
     font-family: var(--fuente-secundaria), serif;
 }
@@ -69,22 +69,22 @@
     background: var(--lapis-lazuli, #2a628f);
 }
 
-/* ? ---- Codigo de Vestimenta ---- */
+/* ? ----------------------- Codigo de Vestimenta ----------------------- */
 .dressCode-section {
     font-family: var(--fuente-secundaria), serif;
 }
 
-/* ? ---- Sugerencia de Regalos ---- */
+/* ? ----------------------- Sugerencia de Regalos ----------------------- */
 .gift-section {
     font-family: var(--fuente-secundaria), serif;
 }
 
-/* ? ---- Confirmacion ---- */
+/* ? ----------------------- Confirmacion ----------------------- */
 .confirmation-section {
     font-family: var(--fuente-secundaria), serif;
 }
 
-/* ? ---- Final  ---- */
+/* ? ----------------------- Final  ----------------------- */
 .final-section {
     font-family: var(--fuente-secundaria), serif;
 }

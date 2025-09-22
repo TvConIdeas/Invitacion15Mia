@@ -1,0 +1,63 @@
+/* * ======== Configuracion general de los containers ======== */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+.content-container>div,
+.content-container>h2 {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--borde-radio, 8px);
+    padding: 24px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: none;
+}
+
+.content-container>div.active,
+.content-container>h2.active {
+    display: block;
+}
+
+/* * ======== Animaciones ======== */
+@keyframes slideUpFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+}
+
+@keyframes slideInFromBelow {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUpFade 0.6s forwards;
+}
+
+.slide-in {
+    animation: slideInFromBelow 0.6s forwards;
+}

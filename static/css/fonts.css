@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'WindSong';
+    src: url('../fonts/WindSong-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Parisienne';
+    src: url('../fonts/Parisienne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baskerville';
+    src: url('../fonts/LibreBaskerville-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Federo-Regular';
+    src: url('../fonts/Federo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

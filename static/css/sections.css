@@ -1,0 +1,91 @@
+@import url('./fonts.css');
+
+/* ? ----------- Variables ----------- */
+:root {
+    /* * Fuentes*/
+    --fuente-titulo: 'WindSong';
+    --fuente-secundaria: 'Federo-Regular';
+    --fuente-texto: 'Parisienne';
+
+    /* * Colores - Midnight Magic */
+    --black: #02010aff;
+    --oxford-blue: #04052eff;
+    --federal-blue: #140152ff;
+    --navy-blue: #22007cff;
+    --duke-blue: #0d00a4ff;
+
+    /* * Colores - Midnight Blues */
+    --celestial-blue: #3e92ccff;
+    --lapis-lazuli: #2a628fff;
+    --prussian-blue: #13293dff;
+    --prussian-blue-2: #16324fff;
+    --indigo-dye: #18435aff;
+}
+
+/* ! ======== Secciones ======== */
+/* ? ---- Titulo ---- */
+
+.title-section h1 {
+    font-size: 64px;
+    font-family: var(--fuente-titulo);
+    color: var(--prussian-blue);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 16px;
+}
+
+.title-section h2 {
+    font-size: 24px;
+    font-family: var(--fuente-secundaria);
+    color: var(--lapis-lazuli);
+    margin-bottom: 32px;
+}
+
+/* ? ---- Invitacion ---- */
+.invitation-section {
+    font-family: var(--fuente-secundaria), serif;
+}
+
+/* ? ---- Detalles del Evento ---- */
+.event-section {
+    font-family: var(--fuente-secundaria), serif;
+}
+
+/* * Boton del mapa*/
+.event-map-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 24px;
+    background: var(--celestial-blue, #3e92cc);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: var(--fuente-secundaria), sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.event-map-btn:hover {
+    background: var(--lapis-lazuli, #2a628f);
+}
+
+/* ? ---- Codigo de Vestimenta ---- */
+.dressCode-section {
+    font-family: var(--fuente-secundaria), serif;
+}
+
+/* ? ---- Sugerencia de Regalos ---- */
+.gift-section {
+    font-family: var(--fuente-secundaria), serif;
+}
+
+/* ? ---- Confirmacion ---- */
+.confirmation-section {
+    font-family: var(--fuente-secundaria), serif;
+}
+
+/* ? ---- Final  ---- */
+.final-section {
+    font-family: var(--fuente-secundaria), serif;
+}
+

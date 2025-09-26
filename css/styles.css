@@ -35,8 +35,8 @@ body::before {
     top: 50%;
     width: 100vw;
     height: 100vh;
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 650px;
+    max-height: 650px;
     transform: translate(-50%, -50%);
     background: url('../img/luna.png') no-repeat center center;
     background-size: contain;

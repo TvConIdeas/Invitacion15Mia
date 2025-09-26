@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Agrega los botones a cada div
   divs.forEach((div, i) => {
     const nav = document.createElement("div");
-    nav.style.marginTop = "2px";
+    nav.style.marginTop = "7px";
 
     if (i > 0) {
       const prevBtn = document.createElement("button");
@@ -71,4 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     div.appendChild(nav);
   });
+});
+
+// =================== AUDIO DE FONDO =================== //
+document.addEventListener("click", () => {
+  const audio = document.getElementById("bg-music");
+  if (audio.muted) {
+    audio.muted = false;
+    audio.play().catch(err => console.log("Error reproduciendo audio:", err));
+  }
 });

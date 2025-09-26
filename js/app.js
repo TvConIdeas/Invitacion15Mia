@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Agrega los botones a cada div
   divs.forEach((div, i) => {
     const nav = document.createElement("div");
-    nav.style.marginTop = "16px";
+    nav.style.marginTop = "2px";
 
     if (i > 0) {
       const prevBtn = document.createElement("button");

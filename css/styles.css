@@ -1,7 +1,7 @@
 /* TODO ============ Importaciones ============ */
-@import url('./stars.css');
-@import url('./containersGeneral.css');
-@import url('./sections.css');
+@import url('stars.css');
+@import url('containersGeneral.css');
+@import url('sections.css');
 
 /* ! ======== Configuracion General ======== */
 * {
@@ -33,11 +33,24 @@ body::before {
     position: fixed;
     left: 50%;
     top: 50%;
-    width: 700px;
-    height: 700px;
+    width: 100vw;
+    height: 100vh;
+    max-width: 600px;
+    max-height: 600px;
     transform: translate(-50%, -50%);
     background: url('../img/luna.png') no-repeat center center;
     background-size: contain;
     z-index: 0;
     pointer-events: none;
+}
+
+.content-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    padding: 0 16px;
+    box-sizing: border-box;
 }

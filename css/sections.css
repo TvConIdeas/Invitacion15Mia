@@ -1,11 +1,14 @@
-@import url('./fonts.css');
+@import url('fonts.css');
 
 /* ? ----------- Variables ----------- */
 :root {
     /* * Fuentes*/
-    --fuente-titulo: 'WindSong';
-    --fuente-secundaria: 'Federo-Regular';
-    --fuente-texto: 'Parisienne';
+    --fuente-passion: 'PassionsConflict-Regular';
+    --fuente-federo: 'Federo-Regular';
+    --fuente-parisienne: 'Parisienne';
+    --fuente-windsong: 'WindSong';
+    --fuente-baskerville: 'Baskerville';
+    --fuente-greatvibes: 'GreatVibes-Regular';
 
     /* * Colores - Midnight Magic */
     --black: #02010aff;
@@ -25,29 +28,34 @@
 /* ! ======== Secciones ======== */
 /* ? ----------------------- Titulo ----------------------- */
 
+.title-section {
+    line-height: 1.4;
+}
+
 .title-section h1 {
-    font-size: 64px;
-    font-family: var(--fuente-titulo);
+    font-size: 14vh;
+    font-family: var(--fuente-greatvibes), cursive;
     color: var(--prussian-blue);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 16px;
 }
 
 .title-section h2 {
-    font-size: 24px;
-    font-family: var(--fuente-secundaria);
+    font-size: 7vh;
+    font-family: var(--fuente-parisienne), sans-serif;
     color: var(--lapis-lazuli);
-    margin-bottom: 32px;
 }
 
 /* ? ----------------------- Invitacion ----------------------- */
 .invitation-section {
-    font-family: var(--fuente-secundaria), serif;
+    font-family: var(--fuente-federo), serif;
+    font-size: 2.3vh;
+    line-height: 1.4;
 }
 
 /* ? ----------------------- Detalles del Evento ----------------------- */
 .event-section {
-    font-family: var(--fuente-secundaria), serif;
+    font-family: var(--fuente-federo), serif;
+    font-size: 1.4rem;
 }
 
 /* * Boton del mapa*/
@@ -65,27 +73,66 @@
     cursor: pointer;
     transition: background 0.2s;
 }
+
 .event-map-btn:hover {
     background: var(--lapis-lazuli, #2a628f);
 }
 
 /* ? ----------------------- Codigo de Vestimenta ----------------------- */
 .dressCode-section {
-    font-family: var(--fuente-secundaria), serif;
+    font-family: sans-serif;
+    font-size: 2.3vh;
+    line-height: 2;
+}
+.dressCode-section p{
+    font-family: var(--fuente-federo), serif;
+    font-size: 3vh;
 }
 
 /* ? ----------------------- Sugerencia de Regalos ----------------------- */
 .gift-section {
-    font-family: var(--fuente-secundaria), serif;
+    font-family: var(--fuente-federo), serif;
+    font-size: 1.4rem;
 }
 
 /* ? ----------------------- Confirmacion ----------------------- */
 .confirmation-section {
     font-family: var(--fuente-secundaria), serif;
+    font-size: 1.4rem;
+}
+
+.confirmation-section p{
+    font-family: var(--fuente-federo), serif;
+    font-size: 1.4rem;
+}
+
+/* * Boton del mapa*/
+.confirmation-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    margin: 2vh 0;
+    background: var(--celestial-blue, #3e92cc);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: var(--fuente-secundaria), sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.confirmation-btn:hover {
+    background: var(--lapis-lazuli, #2a628f);
 }
 
 /* ? ----------------------- Final  ----------------------- */
 .final-section {
-    font-family: var(--fuente-secundaria), serif;
+    font-family: var(--fuente-greatvibes), serif;
+    font-size: 2.5rem;
+    color: var(--prussian-blue);
 }
 
+.final-section h2 {
+    margin-top: 4vh;
+}

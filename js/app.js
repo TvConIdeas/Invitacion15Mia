@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const divs = document.querySelectorAll(".content-container > div");
   let current = 0;
+  let isAnimating = false; // 🔹 Bloqueo de animaciones
 
   // * -------- Función helper: soporta Safari --------
   function addAnimationEndListener(element, callback) {
@@ -26,83 +27,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // * -------- Ir al siguiente div --------
   function nextDiv() {
-    if (current < divs.length - 1) {
-      divs[current].classList.add("slide-up");
+    if (isAnimating || current >= divs.length - 1) return; // 🔹 Bloqueo
+    isAnimating = true;
 
-      addAnimationEndListener(divs[current], function handler() {
-        removeAnimationEndListener(divs[current], handler);
+    divs[current].classList.add("slide-up");
 
-        // Oculto el actual y saco la clase
-        divs[current].style.display = "none";
-        divs[current].classList.remove("slide-up");
+    addAnimationEndListener(divs[current], function handler() {
+      removeAnimationEndListener(divs[current], handler);
 
-        // Paso al siguiente
-        current++;
-        divs[current].style.display = "block";
-        divs[current].classList.add("slide-in");
+      divs[current].style.display = "none";
+      divs[current].classList.remove("slide-up");
 
-        addAnimationEndListener(divs[current], function handler2() {
-          removeAnimationEndListener(divs[current], handler2);
-          divs[current].classList.remove("slide-in");
-        });
+      current++;
+      divs[current].style.display = "block";
+      divs[current].classList.add("slide-in");
+
+      addAnimationEndListener(divs[current], function handler2() {
+        removeAnimationEndListener(divs[current], handler2);
+        divs[current].classList.remove("slide-in");
+        isAnimating = false; // 🔹 Libero
       });
-    }
+    });
   }
 
   // * -------- Ir al div anterior --------
   function prevDiv() {
-    if (current > 0) {
-      divs[current].classList.add("slide-up");
+    if (isAnimating || current <= 0) return; // 🔹 Bloqueo
+    isAnimating = true;
 
-      addAnimationEndListener(divs[current], function handler() {
-        removeAnimationEndListener(divs[current], handler);
+    divs[current].classList.add("slide-up");
 
-        // Oculto el actual y saco la clase
-        divs[current].style.display = "none";
-        divs[current].classList.remove("slide-up");
+    addAnimationEndListener(divs[current], function handler() {
+      removeAnimationEndListener(divs[current], handler);
 
-        // Retrocedo al anterior
-        current--;
-        divs[current].style.display = "block";
-        divs[current].classList.add("slide-in");
+      divs[current].style.display = "none";
+      divs[current].classList.remove("slide-up");
 
-        addAnimationEndListener(divs[current], function handler2() {
-          removeAnimationEndListener(divs[current], handler2);
-          divs[current].classList.remove("slide-in");
-        });
+      current--;
+      divs[current].style.display = "block";
+      divs[current].classList.add("slide-in");
+
+      addAnimationEndListener(divs[current], function handler2() {
+        removeAnimationEndListener(divs[current], handler2);
+        divs[current].classList.remove("slide-in");
+        isAnimating = false; // 🔹 Libero
       });
-    }
+    });
   }
 
-  // * -------- Agrego botones de navegación --------
-  divs.forEach((div, i) => {
-    const nav = document.createElement("div");
-    nav.style.marginTop = "2vh";
-
-    // Botón "arriba" si no es el primero
-    if (i > 0) {
-      const prevBtn = document.createElement("button");
-      prevBtn.textContent = "↑";
-      prevBtn.style.marginRight = "8px";
-      prevBtn.style.padding = "4px 8px";
-      prevBtn.style.fontSize = "16px";
-      prevBtn.onclick = prevDiv;
-      nav.appendChild(prevBtn);
-    }
-
-    // Botón "abajo" si no es el último
-    if (i < divs.length - 1) {
-      const nextBtn = document.createElement("button");
-      nextBtn.textContent = "↓";
-      nextBtn.style.marginLeft = "8px";
-      nextBtn.style.padding = "4px 8px";
-      nextBtn.style.fontSize = "16px";
-      nextBtn.onclick = nextDiv;
-      nav.appendChild(nextBtn);
-    }
-
-    div.appendChild(nav);
-  });
+  // * -------- Conecto los botones fijos --------
+  document.getElementById("prevBtn").onclick = prevDiv;
+  document.getElementById("nextBtn").onclick = nextDiv;
 });
 
 // =================== AUDIO DE FONDO =================== //

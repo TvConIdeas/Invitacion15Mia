@@ -23,10 +23,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover; /* Fix Safari */
 
     width: 100vw;
-    min-height: 100vh;
+    min-height: 100vh;   
+    min-height: 100dvh;  
     overflow-x: hidden;
+    z-index: -100;
 }
 
 /* 🔹 Fondo alternativo para móviles */
@@ -39,19 +42,19 @@ body {
 /* ! ======== Luna de fondo ======== */
 body::before {
     content: "";
-    position: fixed;
-    left: 50%;
-    top: 50%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
     width: 100vw;
     height: 100vh;
-    max-width: 660px;
-    max-height: 660px;
-    transform: translate(-50%, -50%);
-    background: url('../img/luna.png') no-repeat center center;
+    max-width: 500px;
+    max-height: 500px;
+    background: url('../img/lunaV2.png') no-repeat center center;
     background-size: contain;
     z-index: 0;
     pointer-events: none;
 }
+
 
 /* ! ======== Contenedor principal ======== */
 .content-container>div {
@@ -63,4 +66,33 @@ body::before {
     text-align: center;
     padding: 0 16px;
     box-sizing: border-box;
+}
+
+/* Flechas de movimiento */
+.nav-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 16px;
+    z-index: 10;
+}
+
+.nav-buttons button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 24px;
+    padding: 12px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-buttons button:hover {
+    color: black;
+    background: rgba(255, 255, 255, 0.9);
 }

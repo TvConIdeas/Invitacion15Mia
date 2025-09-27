@@ -3,7 +3,7 @@
 @import url('containersGeneral.css');
 @import url('sections.css');
 
-/* ! ======== Configuracion General ======== */
+/* ! ======== Configuración General ======== */
 * {
     margin: 0;
     padding: 0;
@@ -13,18 +13,27 @@
 body {
     position: relative;
     display: flex;
-
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 
-    background: url('../img/wallpaper2.png') center center fixed;
+    background-color: #10202f;
+    background-image: url('../img/fondo_900px.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
+}
+
+/* 🔹 Fondo alternativo para móviles */
+@media (max-width: 768px) {
+    body {
+        background-image: url('../img/fondo_720px.jpg');
+    }
 }
 
 /* ! ======== Luna de fondo ======== */
@@ -44,7 +53,8 @@ body::before {
     pointer-events: none;
 }
 
-.content-container > div {
+/* ! ======== Contenedor principal ======== */
+.content-container>div {
     display: flex;
     flex-direction: column;
     align-items: center;

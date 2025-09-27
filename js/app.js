@@ -3,6 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const divs = document.querySelectorAll(".content-container > div");
   let current = 0;
 
+  // * -------- Función helper: soporta Safari --------
+  function addAnimationEndListener(element, callback) {
+    element.addEventListener("animationend", callback);
+    element.addEventListener("webkitAnimationEnd", callback); // Safari iOS
+  }
+
+  function removeAnimationEndListener(element, callback) {
+    element.removeEventListener("animationend", callback);
+    element.removeEventListener("webkitAnimationEnd", callback);
+  }
+
   // * -------- Mostrar un div específico --------
   function showDiv(index) {
     divs.forEach((div, i) => {
@@ -18,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (current < divs.length - 1) {
       divs[current].classList.add("slide-up");
 
-      divs[current].addEventListener("animationend", function handler() {
-        divs[current].removeEventListener("animationend", handler);
+      addAnimationEndListener(divs[current], function handler() {
+        removeAnimationEndListener(divs[current], handler);
 
         // Oculto el actual y saco la clase
         divs[current].style.display = "none";
@@ -30,9 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         divs[current].style.display = "block";
         divs[current].classList.add("slide-in");
 
-        // Quito la clase al terminar animación
-        divs[current].addEventListener("animationend", function handler2() {
-          divs[current].removeEventListener("animationend", handler2);
+        addAnimationEndListener(divs[current], function handler2() {
+          removeAnimationEndListener(divs[current], handler2);
           divs[current].classList.remove("slide-in");
         });
       });
@@ -44,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (current > 0) {
       divs[current].classList.add("slide-up");
 
-      divs[current].addEventListener("animationend", function handler() {
-        divs[current].removeEventListener("animationend", handler);
+      addAnimationEndListener(divs[current], function handler() {
+        removeAnimationEndListener(divs[current], handler);
 
         // Oculto el actual y saco la clase
         divs[current].style.display = "none";
@@ -56,9 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
         divs[current].style.display = "block";
         divs[current].classList.add("slide-in");
 
-        // Quito la clase al terminar animación
-        divs[current].addEventListener("animationend", function handler2() {
-          divs[current].removeEventListener("animationend", handler2);
+        addAnimationEndListener(divs[current], function handler2() {
+          removeAnimationEndListener(divs[current], handler2);
           divs[current].classList.remove("slide-in");
         });
       });
@@ -68,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // * -------- Agrego botones de navegación --------
   divs.forEach((div, i) => {
     const nav = document.createElement("div");
-    nav.style.marginTop = "7px";
+    nav.style.marginTop = "2vh";
 
     // Botón "arriba" si no es el primero
     if (i > 0) {
